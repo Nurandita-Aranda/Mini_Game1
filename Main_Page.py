@@ -11,7 +11,7 @@ def autoplay_audio(file_path: str):
         data = f.read()
         b64 = base64.b64encode(data).decode()
         md = f"""
-            <audio autoplay="true">
+            <audio autoplay = True>
             <source src="data:audio/mp3;base64,{b64}" type="audio/mp3">
             </audio>
             """
@@ -19,7 +19,6 @@ def autoplay_audio(file_path: str):
             md,
             unsafe_allow_html=True,
         )
-st.write("# Auto-playing Audio!")
 autoplay_audio("Resource/BGM/Riverdel.mp3")
 
 
