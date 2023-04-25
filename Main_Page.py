@@ -11,7 +11,7 @@ def add_bg_from_local(image_file):
     f"""
     <style>
     .stApp {{
-        background-image: url(data:image/{"png"};base64,{encoded_string.decode()});
+        background-image: url(data:image/{"jpg"};base64,{encoded_string.decode()});
         background-size: 100%;
         background-position: top;
         background-repeat: no-repeat;
@@ -27,4 +27,4 @@ def add_bg_from_local(image_file):
     """,
     unsafe_allow_html=True
     )
-add_bg_from_local('Resource/image/Night_sky.png')
+add_bg_from_local('Resource/image/Night_sky.jpg')
