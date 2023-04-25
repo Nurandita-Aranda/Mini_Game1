@@ -1,9 +1,24 @@
 import streamlit as st
 import base64
+import time
 
 st.markdown("<h1 style='text-align: center; color: raisin black;'>Alchemist Diary</h1>", unsafe_allow_html=True)
 
 
+#Musik
+html_string = """
+            <audio controls autoplay>
+              <source src="Resource/BGM/Riverdel.mp3">
+            </audio>
+            """
+
+sound = st.empty()
+sound.markdown(html_string, unsafe_allow_html=True)  # will display a st.audio with the sound you specified in the "src" of the html_string and autoplay it
+time.sleep(2)  # wait for 2 seconds to finish the playing of the audio
+sound.empty()
+
+
+#Background
 def add_bg_from_local(image_file):
     with open(image_file, "rb") as image_file:
         encoded_string = base64.b64encode(image_file.read())
