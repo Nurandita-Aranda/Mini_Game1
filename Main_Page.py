@@ -17,6 +17,12 @@ def add_bg_from_local(image_file):
         background-repeat: no-repeat;
         background-attachment: local;
     }}
+    [data-testid="stHeader"] {{
+    background: rgba(0,0,0,0);
+    }}
+    [data-testid="stToolbar"] {{
+    right: 2rem;
+    }}
     </style>
     """,
     unsafe_allow_html=True
