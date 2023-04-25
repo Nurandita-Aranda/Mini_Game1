@@ -6,16 +6,21 @@ st.markdown("<h1 style='text-align: center; color: raisin black;'>Alchemist Diar
 
 
 #Musik
-html_string = """
-            <audio controls autoplay>
-              <source src="Resource/BGM/Riverdel.mp3">
+def autoplay_audio(file_path: str):
+    with open(file_path, "rb") as f:
+        data = f.read()
+        b64 = base64.b64encode(data).decode()
+        md = f"""
+            <audio controls autoplay="true">
+            <source src="data:audio/mp3;base64,{b64}" type="audio/mp3">
             </audio>
             """
-
-sound = st.empty()
-sound.markdown(html_string, unsafe_allow_html=True)
-time.sleep(30)
-sound.empty()
+        st.markdown(
+            md,
+            unsafe_allow_html=True,
+        )
+st.write("# Auto-playing Audio!")
+autoplay_audio("Resource/BGM/Riverdel.mp3")
 
 
 #Background
